@@ -8,10 +8,10 @@ class BackHandlerAndroid extends React.Component {
 
   componentDidMount() {
     this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload =>
-      BackHandler.removeEventListener('hardwareBackPress', this.props.onBackButtonPress)
+      BackHandler.removeEventListener('hardwareBackPress', this.props.onPress)
     );
     this._didFocusSubscription = this.props.navigation.addListener('didFocus', payload =>
-      BackHandler.addEventListener('hardwareBackPress', this.props.onBackButtonPress)
+      BackHandler.addEventListener('hardwareBackPress', this.props.onPress)
     );
   }
 
