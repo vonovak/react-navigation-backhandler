@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-backhandler",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Easily handle Android back button with react-navigation",
   "main": "index.js",
   "scripts": {
