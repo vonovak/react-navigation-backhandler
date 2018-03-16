@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { withNavigation } from 'react-navigation';
+import { BackHandler } from 'react-native';
 
 class BackHandlerAndroid extends React.Component {
   _willBlurSubscription;

@@ -10,13 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/vonovak/react-navigation-backhandler.git"
   },
-  "keywords": [
-    "react-navigation",
-    "react-native"
-  ],
+  "keywords": ["react-navigation", "react-native"],
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0",
-    "react-navigation": "^1.0.0 || ^2.0.0"
+    "react-navigation": "^1.0.0 || ^2.0.0",
+    "react-native": "^0.44"
   },
   "author": "Vojtech Novak",
   "license": "MIT",
