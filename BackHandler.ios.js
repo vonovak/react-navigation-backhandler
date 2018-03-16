@@ -1,1 +1,1 @@
-export const BackHandler = ({ children }) => children;
+export const AndroidBackHandler = ({ children }) => children;

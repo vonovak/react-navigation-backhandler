@@ -25,4 +25,4 @@ class BackHandlerAndroid extends React.Component {
   }
 }
 
-export const BackHandler = withNavigation(BackHandlerAndroid);
+export const AndroidBackHandler = withNavigation(BackHandlerAndroid);
