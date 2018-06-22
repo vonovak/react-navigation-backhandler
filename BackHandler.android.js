@@ -26,6 +26,7 @@ class BackHandlerAndroid extends React.Component {
   componentWillUnmount() {
     this._didFocusSubscription && this._didFocusSubscription.remove();
     this._willBlurSubscription && this._willBlurSubscription.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPressed);
   }
 
   render() {
