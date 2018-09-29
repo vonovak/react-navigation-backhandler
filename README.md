@@ -25,9 +25,8 @@ class SomeComponent extends React.Component {
     if (youWantToHandleTheBackButtonPress) {
       // do something
       return true;
-    } else {
-      return false;
     }
+     return false;
   };
 
   render() {
