@@ -26,7 +26,7 @@ class SomeComponent extends React.Component {
       // do something
       return true;
     }
-     return false;
+    return false;
   };
 
   render() {
