@@ -37,3 +37,5 @@ class SomeComponent extends React.Component {
     );
   }
 ```
+
+You can also use the component "inline" without children: `<AndroidBackHandler onBackPress={this.onBackButtonPressAndroid} />`
