@@ -8,7 +8,7 @@ class BackHandlerAndroid extends React.Component {
 
   constructor(props) {
     super(props);
-    this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
+    this._didFocusSubscription = props.navigation.addListener('willFocus', payload =>
       BackHandler.addEventListener('hardwareBackPress', this.onBackPressed)
     );
   }
