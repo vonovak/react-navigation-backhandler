@@ -16,7 +16,7 @@
   ],
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0",
-    "react-navigation": "^1.0.0 || ^2.0.0",
+    "react-navigation": "*",
     "react-native": "*"
   },
   "author": "Vojtech Novak",
