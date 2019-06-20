@@ -6,7 +6,7 @@ Easily handle Android back button behavior with React-Navigation.
 
 The following snippet demonstrates the usage. Note that `onBackButtonPressAndroid` will only be called if `SomeComponent` is placed in a screen that is focused (the one user is directly interacting with).
 
-Behind the scenes, the `onBackButtonPressAndroid` handler is registered after entering a screen, and unregistered before going away from it, leaving you with a declarative interface to interact with. Internally, this package uses apis that are provided by `react-navigation`.
+Behind the scenes, the `onBackButtonPressAndroid` handler is registered before a screen is focused, and unregistered before going away from it, leaving you with a declarative interface to interact with. Internally, this package uses apis that are provided by `react-navigation`.
 
 You may use `AndroidBackHandler` component anywhere in your app's React tree, it does not need to be placed directly in the screen component.
 
