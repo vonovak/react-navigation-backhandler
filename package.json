@@ -1,5 +1,5 @@
 {
-  "name": "@jayli3n/react-navigation-backhandler",
+  "name": "react-navigation-backhandler-jayli3n",
   "version": "1.4.0",
   "description": "Easily handle Android back button with react-navigation",
   "main": "index.js",
