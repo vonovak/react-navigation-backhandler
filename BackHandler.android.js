@@ -1,38 +1,19 @@
-import * as React from 'react';
-import { withNavigation } from '@react-navigation/compat';
+import { useCallback } from 'react';
 import { BackHandler } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 
-class BackHandlerAndroid extends React.Component {
-  _focusSubscription;
-  _blurSubscription;
+export const useAndroidBackHandler = (onBackPress) => (
+  useFocusEffect((
+    useCallback(() => {
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
 
-  constructor(props) {
-    super(props);
-    if (props.navigation.isFocused()) BackHandler.addEventListener('hardwareBackPress', this.onBackPressed);
-    this._focusSubscription = props.navigation.addListener('focus', payload =>
-      BackHandler.addEventListener('hardwareBackPress', this.onBackPressed)
-    );
-  }
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, [onBackPress])
+  ))
+);
 
-  componentDidMount() {
-    this._blurSubscription = this.props.navigation.addListener('blur', payload =>
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackPressed)
-    );
-  }
+export const AndroidBackHandler = ({ onBackPress, children = null }) => {
+  useAndroidBackHandler(onBackPress);
 
-  onBackPressed = () => {
-    return this.props.onBackPress();
-  };
-
-  componentWillUnmount() {
-    this._focusSubscription && this._focusSubscription.remove();
-    this._blurSubscription && this._blurSubscription.remove();
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPressed);
-  }
-
-  render() {
-    return this.props.children || null;
-  }
-}
-
-export const AndroidBackHandler = withNavigation(BackHandlerAndroid);
+  return children;
+};
