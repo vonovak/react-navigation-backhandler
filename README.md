@@ -2,14 +2,20 @@
 
 Easily handle Android back button behavior with React-Navigation.
 
+> NOTE use version 1 of this package for `react-navigation` version 4 and lower
+>
+> use version 2 of this package for `react-navigation` version 5
+
 ## Installation
 
 Install with npm:
+
 ```sh
 $ npm install react-navigation-backhandler
 ```
 
 Install with yarn:
+
 ```sh
 $ yarn add react-navigation-backhandler
 ```
@@ -23,21 +29,23 @@ Behind the scenes, the `onBackButtonPressAndroid` handler is registered before a
 You may use `useAndroidBackHandler` or `AndroidBackHandler` component anywhere in your app's React tree, it does not need to be placed directly in the screen component.
 
 There are two ways of using this library:
+
 1. [As hook](#use-as-hook)
 1. [As component](#use-as-component)
 
 ### Use as hook
+
 ```js
-import { useAndroidBackHandler } from 'react-navigation-backhandler';
+import { useAndroidBackHandler } from "react-navigation-backhandler";
 
 const SomeComponent = () => {
   useAndroidBackHandler(() => {
     /*
-    *   Returning `true` denotes that we have handled the event,
-    *   and react-navigation's lister will not get called, thus not popping the screen.
-    *
-    *   Returning `false` will cause the event to bubble up and react-navigation's listener will pop the screen.
-    * */
+     *   Returning `true` denotes that we have handled the event,
+     *   and react-navigation's lister will not get called, thus not popping the screen.
+     *
+     *   Returning `false` will cause the event to bubble up and react-navigation's listener will pop the screen.
+     * */
 
     if (youWantToHandleTheBackButtonPress) {
       // do something
@@ -47,28 +55,25 @@ const SomeComponent = () => {
     return false;
   });
 
-  return (
-    <BodyOfYourScreen />
-  );
+  return <BodyOfYourScreen />;
 };
 ```
-
 
 ### Use as component
 
 > **Note:** You can also use the component "inline" without children: `<AndroidBackHandler onBackPress={this.onBackButtonPressAndroid} />`
 
 ```js
-import { AndroidBackHandler } from 'react-navigation-backhandler';
+import { AndroidBackHandler } from "react-navigation-backhandler";
 
 class SomeComponent extends React.Component {
   onBackButtonPressAndroid = () => {
     /*
-    *   Returning `true` from `onBackButtonPressAndroid` denotes that we have handled the event,
-    *   and react-navigation's lister will not get called, thus not popping the screen.
-    *
-    *   Returning `false` will cause the event to bubble up and react-navigation's listener will pop the screen.
-    * */
+     *   Returning `true` from `onBackButtonPressAndroid` denotes that we have handled the event,
+     *   and react-navigation's lister will not get called, thus not popping the screen.
+     *
+     *   Returning `false` will cause the event to bubble up and react-navigation's listener will pop the screen.
+     * */
 
     if (youWantToHandleTheBackButtonPress) {
       // do something
