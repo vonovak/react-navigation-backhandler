@@ -1,1 +1,1 @@
-export { AndroidBackHandler } from './BackHandler';
+export * from './BackHandler';
