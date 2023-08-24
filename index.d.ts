@@ -1,13 +1,11 @@
 declare module "react-navigation-backhandler" {
-  import { Component } from "react";
+  import { FC, PropsWithChildren } from "react";
 
   export interface AndroidBackHandlerProperties {
     onBackPress: () => boolean;
   }
 
-  export class AndroidBackHandler extends Component<
-    AndroidBackHandlerProperties
-  > {}
+  export const AndroidBackHandler: FC<PropsWithChildren<AndroidBackHandlerProperties>>;
 
   export function useAndroidBackHandler(onBackPress: () => boolean);
 }
