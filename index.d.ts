@@ -7,5 +7,5 @@ declare module "react-navigation-backhandler" {
 
   export const AndroidBackHandler: FC<PropsWithChildren<AndroidBackHandlerProperties>>;
 
-  export function useAndroidBackHandler(onBackPress: () => boolean);
+  export function useAndroidBackHandler(onBackPress: () => boolean): void;
 }
