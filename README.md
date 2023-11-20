@@ -4,7 +4,7 @@ Easily handle Android back button behavior with React-Navigation.
 
 > NOTE use version 1 of this package for `react-navigation` version 4 and lower
 >
-> use version 2 of this package for `react-navigation` version 5
+> use version 2 of this package for `react-navigation` version 5 and later
 
 ## Installation
 
