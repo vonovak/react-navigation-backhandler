@@ -39,7 +39,7 @@ There are two ways of using this library:
 import { useAndroidBackHandler } from "react-navigation-backhandler";
 
 const SomeComponent = () => {
-  useAndroidBackHandler(() => {
+  const onBackPress = useCallback(() => {
     /*
      *   Returning `true` denotes that we have handled the event,
      *   and react-navigation's lister will not get called, thus not popping the screen.
@@ -49,14 +49,16 @@ const SomeComponent = () => {
 
     if (youWantToHandleTheBackButtonPress) {
       // do something
-      return true;
+      return true
     }
 
-    return false;
-  });
+    return false
+  }, [])
 
-  return <BodyOfYourScreen />;
-};
+  useAndroidBackHandler(onBackPress)
+
+  return <BodyOfYourScreen />
+}
 ```
 
 ### Use as component
