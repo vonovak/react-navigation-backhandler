@@ -5,9 +5,9 @@ import { useFocusEffect } from '@react-navigation/native';
 export const useAndroidBackHandler = (onBackPress) => (
   useFocusEffect((
     useCallback(() => {
-      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+      const subscription = BackHandler.addEventListener('hardwareBackPress', onBackPress);
 
-      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      return () => subscription.remove();
     }, [onBackPress])
   ))
 );
